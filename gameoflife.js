@@ -1,13 +1,17 @@
 const unitLength = 20;
-let boxColor = 150;
+let boxColor = "#000000";
 let strokeColor = 50;
 let columns; /* To be determined by window width */
 let rows; /* To be determined by window height */
 let currentBoard;
 let nextBoard;
 let stopFlag = true;
+
+// querySelector
 let reset = document.querySelector("#reset-game");
 let gameControl = document.querySelector("#game-control");
+let color = document.querySelector("#colorInput");
+let fpsRange = document.querySelector("#fpsRange");
 
 function setup() {
   /* Set the canvas to be under the element #canvas*/
@@ -32,6 +36,7 @@ function setup() {
 /**
  * Initialize/reset the board state
  */
+
 function init() {
   for (let i = 0; i < columns; i++) {
     for (let j = 0; j < rows; j++) {
@@ -39,6 +44,14 @@ function init() {
       nextBoard[i][j] = 0;
     }
   }
+
+  color.addEventListener("change", (events) => {
+    boxColor = events.target.value;
+  });
+
+  fpsRange.addEventListener("change", (events) => {
+    onChangeFrameRate(events.target.value);
+  });
 }
 
 function draw() {
@@ -112,6 +125,10 @@ function mouseDragged() {
   fill(boxColor);
   stroke(strokeColor);
   rect(x * unitLength, y * unitLength, unitLength, unitLength);
+  // chosen by the color-picker
+  colorInput.addEventListener("click", () => {
+    document = colorInput.value;
+  });
 }
 
 /**
@@ -155,8 +172,24 @@ gameControl.addEventListener("click", function () {
 });
 
 //speed control
-// simulation Speed
-// slider html
+function onChangeFrameRate(frameRate) {
+  setFrameRate(parseInt(frameRate)); //framerate
+}
+
+//Resize board on windows resize (Check out windowsResized())
+addEventListener("resize", (event) => {});
+
+onresize = (event) => {};
+
+const heightOutput = document.querySelector("#height");
+const widthOutput = document.querySelector("#width");
+
+function reportWindowSize() {
+  heightOutput.textContent = window.innerHeight;
+  widthOutput.textContent = window.innerWidth;
+}
+
+window.onresize = reportWindowSize;
 
 //Random initial states
 
@@ -172,7 +205,6 @@ gameControl.addEventListener("click", function () {
 
 //Use Keyboard to control the cursor to place the life
 
-//Resize board on windows resize (Check out windowsResized())
+
 
 //Switching between different styles??
-
