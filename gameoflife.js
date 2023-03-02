@@ -6,6 +6,9 @@ let rows; /* To be determined by window height */
 let currentBoard;
 let nextBoard;
 let stopFlag = true;
+let underPopulation = 2;
+let overPopulation = 3;
+let reproduction = 3;
 
 // querySelector
 let reset = document.querySelector("#reset-game");
@@ -13,6 +16,10 @@ let gameControl = document.querySelector("#game-control");
 let random = document.querySelector("#random");
 let color = document.querySelector("#colorInput");
 let fpsRange = document.querySelector("#fpsRange");
+let aBtn = document.querySelector("#underPopulation");
+let bBtn = document.querySelector("#overPopulation");
+let cBtn = document.querySelector("#reproduction");
+
 
 function setup() {
   console.log("setup", windowWidth, windowHeight);
@@ -52,8 +59,6 @@ function init() {
 
   //Random initial states
   random.addEventListener("click", function () {
-
-
     stopFlag = false;
     gameControl.innerHTML = "pause";
 
@@ -118,13 +123,13 @@ function generate() {
       }
 
       // Rules of Life
-      if (currentBoard[x][y] == 1 && neighbors < 2) {
+      if (currentBoard[x][y] == 1 && neighbors < underPopulation) {
         // Die of Loneliness
         nextBoard[x][y] = 0;
-      } else if (currentBoard[x][y] == 1 && neighbors > 3) {
+      } else if (currentBoard[x][y] == 1 && neighbors > overPopulation) {
         // Die of Overpopulation
         nextBoard[x][y] = 0;
-      } else if (currentBoard[x][y] == 0 && neighbors == 3) {
+      } else if (currentBoard[x][y] == 0 && neighbors == reproduction) {
         // New life due to Reproduction
         nextBoard[x][y] = 1;
       } else {
@@ -205,12 +210,28 @@ function onChangeFrameRate(frameRate) {
   setFrameRate(parseInt(frameRate)); //framerate
   stopFlag = false;
   gameControl.innerHTML = "pause";
-  loop()
+  loop();
 }
 
-//change rules of survival
 
+//rules of survival
 //change rules of reproduction
+aBtn.addEventListener("change", (event) => {
+  let result = event.target.value;
+  underPopulation = parseInt(result);
+});
+
+bBtn.addEventListener("change", (event) => {
+  let result = event.target.value;
+  overPopulation = parseInt(result);
+});
+
+cBtn.addEventListener("change", (event) => {
+  let result = event.target.value;
+  reproduction = parseInt(result);
+});
+
+
 
 //Darken colors for stable life
 
