@@ -17,11 +17,16 @@
   </head>
   <body>
     <div id="canvas"></div>
+    
+    <!-- button -->
     <div class="buttons-div">
-      <button id="game-control" type="button">start</button>
+      <button type="button" id="game-control" >start</button>
       <button type="button" id="reset-game">reset-game</button>
+      <button type="button" id="random">random</button>
     </div>
-
+    
+    
+    <!-- speed -->
     <input
       type="range"
       min="1"
@@ -30,14 +35,12 @@
       class="slider"
       id="fpsRange"
     />
-    <!-- abc -->
-
+    <!-- color -->
     <i>color picker</i>
     <input id="colorInput" type="color" />
 
-    <p>Resize the browser window to fire the <code>resize</code> event.</p>
-    <p>Window height: <span id="height"></span></p>
-    <p>Window width: <span id="width"></span></p>
+
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

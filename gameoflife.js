@@ -10,10 +10,12 @@ let stopFlag = true;
 // querySelector
 let reset = document.querySelector("#reset-game");
 let gameControl = document.querySelector("#game-control");
+let random = document.querySelector("#random");
 let color = document.querySelector("#colorInput");
 let fpsRange = document.querySelector("#fpsRange");
 
 function setup() {
+  console.log("setup", windowWidth, windowHeight);
   /* Set the canvas to be under the element #canvas*/
   const canvas = createCanvas(windowWidth, windowHeight - 100);
   canvas.parent(document.querySelector("#canvas"));
@@ -21,6 +23,8 @@ function setup() {
   /*Calculate the number of columns and rows */
   columns = floor(width / unitLength);
   rows = floor(height / unitLength);
+  // columns = 5;
+  // rows = 5;
 
   /*Making both currentBoard and nextBoard 2-dimensional matrix that has (columns * rows) boxes. */
   currentBoard = [];
@@ -31,6 +35,7 @@ function setup() {
   }
   // Now both currentBoard and nextBoard are array of array of undefined values.
   init(); // Set the initial values of the currentBoard and nextBoard
+  // noLoop();
 }
 
 /**
@@ -45,6 +50,25 @@ function init() {
     }
   }
 
+  //Random initial states
+  random.addEventListener("click", function () {
+    console.log("hihi");
+
+    stopFlag = false;
+    gameControl.innerHTML = "pause";
+
+    for (let x = 0; x < columns; x++) {
+      for (let y = 0; y < rows; y++) {
+        // currentBoard[x][y] = Math.random() > 0.7 ? 1 : 0;
+        currentBoard[x][y] = Math.random() < 0.3 ? 1 : 0;
+
+        // console.log("check exact ", currentBoard[x][y]);
+        // // console.log("check big exact", currentBoard);
+      }
+    }
+    loop();
+  });
+
   color.addEventListener("change", (events) => {
     boxColor = events.target.value;
   });
@@ -52,9 +76,15 @@ function init() {
   fpsRange.addEventListener("change", (events) => {
     onChangeFrameRate(events.target.value);
   });
+
+  window.onresize = () => {
+    setup();
+    loop();
+  };
 }
 
 function draw() {
+  console.log("check");
   background(255);
   generate();
   for (let i = 0; i < columns; i++) {
@@ -176,23 +206,6 @@ function onChangeFrameRate(frameRate) {
   setFrameRate(parseInt(frameRate)); //framerate
 }
 
-//Resize board on windows resize (Check out windowsResized())
-addEventListener("resize", (event) => {});
-
-onresize = (event) => {};
-
-const heightOutput = document.querySelector("#height");
-const widthOutput = document.querySelector("#width");
-
-function reportWindowSize() {
-  heightOutput.textContent = window.innerHeight;
-  widthOutput.textContent = window.innerWidth;
-}
-
-window.onresize = reportWindowSize;
-
-//Random initial states
-
 //change rules of survival
 
 //change rules of reproduction
@@ -205,6 +218,6 @@ window.onresize = reportWindowSize;
 
 //Use Keyboard to control the cursor to place the life
 
-
+//Resize board on windows resize (Check out windowsResized())
 
 //Switching between different styles??
