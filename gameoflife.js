@@ -52,7 +52,7 @@ function init() {
 
   //Random initial states
   random.addEventListener("click", function () {
-    console.log("hihi");
+
 
     stopFlag = false;
     gameControl.innerHTML = "pause";
@@ -84,7 +84,6 @@ function init() {
 }
 
 function draw() {
-  console.log("check");
   background(255);
   generate();
   for (let i = 0; i < columns; i++) {
@@ -204,6 +203,9 @@ gameControl.addEventListener("click", function () {
 //speed control
 function onChangeFrameRate(frameRate) {
   setFrameRate(parseInt(frameRate)); //framerate
+  stopFlag = false;
+  gameControl.innerHTML = "pause";
+  loop()
 }
 
 //change rules of survival
