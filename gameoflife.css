@@ -1,0 +1,26 @@
+.main {
+  display: flex;
+}
+
+.left-bar {
+  width: 10%;
+}
+
+.gameboard {
+  width: 80%;
+  height: 500px;
+}
+
+.right-bar {
+  width: 10%;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.invisible {
+  display: none;
+}
+
