@@ -20,7 +20,6 @@ let aBtn = document.querySelector("#underPopulation");
 let bBtn = document.querySelector("#overPopulation");
 let cBtn = document.querySelector("#reproduction");
 
-
 function setup() {
   console.log("setup", windowWidth, windowHeight);
   /* Set the canvas to be under the element #canvas*/
@@ -71,6 +70,7 @@ function init() {
         // // console.log("check big exact", currentBoard);
       }
     }
+
     loop();
   });
 
@@ -82,6 +82,7 @@ function init() {
     onChangeFrameRate(events.target.value);
   });
 
+  //Resize board on windows resize (Check out windowsResized())
   window.onresize = () => {
     setup();
     loop();
@@ -122,6 +123,7 @@ function generate() {
         }
       }
 
+      
       // Rules of Life
       if (currentBoard[x][y] == 1 && neighbors < underPopulation) {
         // Die of Loneliness
@@ -213,7 +215,6 @@ function onChangeFrameRate(frameRate) {
   loop();
 }
 
-
 //rules of survival
 //change rules of reproduction
 aBtn.addEventListener("change", (event) => {
@@ -233,6 +234,7 @@ cBtn.addEventListener("change", (event) => {
 
 
 
+
 //Darken colors for stable life
 
 //multiple colors of life on the same board
@@ -240,7 +242,5 @@ cBtn.addEventListener("change", (event) => {
 //Well-known patterns of Game of Life to select from (Examples: Gosper Glider Gun, Glider, Lightweight train)
 
 //Use Keyboard to control the cursor to place the life
-
-//Resize board on windows resize (Check out windowsResized())
 
 //Switching between different styles??
