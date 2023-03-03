@@ -25,7 +25,7 @@ let body = document.body;
 let colorMode = document.querySelector(".color-mode");
 let darkButton = document.querySelector(".dark-button");
 let lightButton = document.querySelector(".light-button");
-let notInCanvas = "false";
+// let notInCanvas = "false";
 
 function setup() {
   let gameBoard = select(".gameBoard");
