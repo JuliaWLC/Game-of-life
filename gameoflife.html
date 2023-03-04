@@ -16,11 +16,9 @@
     <link rel="stylesheet" href="gameoflife.css" />
   </head>
   <body>
-    <section class="workspace container">
-      <header class="row">
-        <div class="col">
-          <h1>game intro</h1>
-        </div>
+    <section class="workspace-container">
+      <header class="row" id="top-cont">
+        <p>Game of Life</p>
 
         <div class="mode-control">
           <button onclick="changeMode()" class="color-mode">
@@ -31,39 +29,8 @@
       </header>
 
       <section class="main">
-        <div class="left-bar">
-          <button type="button" id="game-control">start</button>
-          <button type="button" id="reset-game">reset-game</button>
-          <button type="button" id="random">random</button>
-        </div>
-
         <div class="gameBoard">
           <div id="canvas"></div>
-        </div>
-
-        <div class="right-bar">
-          <div class="fps-range">
-            <i>fpsRange</i>
-            <input
-              type="range"
-              min="1"
-              max="100"
-              value="50"
-              class="slider"
-              id="fpsRange"
-            />
-          </div>
-
-          <!-- color -->
-          <div class="color-picker">
-            <i>color picker</i>
-            <input id="colorInput" type="color" />
-          </div>
-
-          <div class="stable-color-picker">
-            <i>color picker of stable life</i>
-            <input id="stableColorInput" type="color" />
-          </div>
         </div>
       </section>
 
@@ -71,6 +38,37 @@
 
       <footer class="row">
         <div class="container">
+          <div class="left-bar">
+            <button type="button" id="game-control">start</button>
+            <button type="button" id="reset-game">reset-game</button>
+            <button type="button" id="random">random</button>
+          </div>
+
+          <div class="right-bar">
+            <div class="fps-range">
+              <i>fpsRange</i>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="50"
+                class="slider"
+                id="fpsRange"
+              />
+            </div>
+
+            <!-- color -->
+            <div class="color-picker">
+              <i>color picker</i>
+              <input id="colorInput" type="color" />
+            </div>
+
+            <div class="stable-color-picker">
+              <i>color picker of stable life</i>
+              <input id="stableColorInput" type="color" />
+            </div>
+          </div>
+
           <div class="rules row">
             <p>rules explanation</p>
           </div>

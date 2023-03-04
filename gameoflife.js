@@ -25,12 +25,11 @@ let body = document.body;
 let colorMode = document.querySelector(".color-mode");
 let darkButton = document.querySelector(".dark-button");
 let lightButton = document.querySelector(".light-button");
+let c = document.querySelector("#canvas");
 // let notInCanvas = "false";
 
 function setup() {
   let gameBoard = select(".gameBoard");
-
-  console.log("setup", gameBoard.width, gameBoard.height);
 
   /* Set the canvas to be under the element #canvas*/
   const canvas = createCanvas(gameBoard.width, gameBoard.height);
@@ -49,6 +48,7 @@ function setup() {
     currentBoard[i] = [];
     nextBoard[i] = [];
   }
+
   // Now both currentBoard and nextBoard are array of array of undefined values.
   init(); // Set the initial values of the currentBoard and nextBoard
   // noLoop();
@@ -82,6 +82,7 @@ function init() {
     }
 
     loop();
+
   });
 
   color.addEventListener("change", (events) => {
@@ -100,7 +101,8 @@ function init() {
 }
 
 function draw() {
-  background(255);
+  background(229, 210, 196);
+  stroke(242, 232, 225);
   generate();
   for (let i = 0; i < columns; i++) {
     for (let j = 0; j < rows; j++) {
@@ -112,12 +114,13 @@ function draw() {
           fill(boxColor);
         }
       } else {
-        fill(255);
+        fill(229, 210, 196);
       }
-      stroke(strokeColor);
+      stroke(242, 232, 225);
       rect(i * unitLength, j * unitLength, unitLength, unitLength);
     }
   }
+    
 }
 
 function generate() {
@@ -157,6 +160,7 @@ function generate() {
 
   // Swap the nextBoard to be the current Board
   [currentBoard, nextBoard] = [nextBoard, currentBoard];
+  
 }
 
 /**
@@ -173,7 +177,7 @@ function mouseDragged() {
   const y = Math.floor(mouseY / unitLength);
   currentBoard[x][y] = 1;
   fill(boxColor);
-  stroke(strokeColor);
+  stroke(242, 232, 225);
   rect(x * unitLength, y * unitLength, unitLength, unitLength);
   // chosen by the color-picker
   colorInput.addEventListener("click", () => {

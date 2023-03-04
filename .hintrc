@@ -9,19 +9,10 @@
         "label": "off"
       }
     ],
-    "axe/language": "off",
     "axe/text-alternatives": [
       "default",
       {
-        "document-title": "off",
         "image-alt": "off"
-      }
-    ],
-    "no-inline-styles": "off",
-    "axe/name-role-value": [
-      "default",
-      {
-        "link-name": "off"
       }
     ]
   }

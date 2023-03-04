@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-.workspace{
+.workspace {
   margin: 1%;
 }
 
@@ -210,9 +210,23 @@ body {
   transition: all 1s;
 }
 
+.learn-btn a:link {
+  color: white;
+  text-decoration: none;
+}
+
+.learn-btn a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.learn-btn a:active { 
+  color: white;
+  text-decoration: none; }
+
 .learn-btn:hover {
-  background: rgb(224, 229, 134);
-  border: 2px solid rgb(224, 229, 134);
+  background: rgb(157, 157, 157);
+  border: 2px solid rgb(157, 157, 157);
 }
 
 .contact-btn {
@@ -224,8 +238,8 @@ body {
 }
 
 .contact-btn:hover {
-  color: rgb(224, 229, 134);
-  border: 2px solid rgb(224, 229, 134);
+  color: rgb(157, 157, 157);
+  border: 2px solid rgb(157, 157, 157);
 }
 
 #logo {
@@ -291,8 +305,9 @@ li span a:hover {
     margin-top: 50px;
     width: 90%;
 } */
-#profile{
- margin-top: 20vh;
+#profile {
+  margin-top: 20vh;
+  width: 45%;
 }
 
 #profile-img {
@@ -316,7 +331,6 @@ li span a:hover {
     display: none;
   }
 
-
   .menu-wrap {
     display: block;
   }
@@ -337,7 +351,6 @@ li span a:hover {
     z-index: 3;
   }
 
-
   #profile-img {
     width: 100%;
     height: 100%;
@@ -345,12 +358,14 @@ li span a:hover {
 
   .container {
     display: grid;
+    margin-left: 5vw;
   }
 
+  #profile {
+    margin-top: 10%;
+  }
 
-
-#profile{
-  margin-top: 10%;
-}
-
+  .social-icons {
+    display: none;
+  }
 }
