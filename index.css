@@ -220,9 +220,10 @@ body {
   text-decoration: none;
 }
 
-.learn-btn a:active { 
+.learn-btn a:active {
   color: white;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .learn-btn:hover {
   background: rgb(157, 157, 157);

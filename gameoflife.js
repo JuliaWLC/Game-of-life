@@ -82,7 +82,6 @@ function init() {
     }
 
     loop();
-
   });
 
   color.addEventListener("change", (events) => {
@@ -120,7 +119,6 @@ function draw() {
       rect(i * unitLength, j * unitLength, unitLength, unitLength);
     }
   }
-    
 }
 
 function generate() {
@@ -160,7 +158,6 @@ function generate() {
 
   // Swap the nextBoard to be the current Board
   [currentBoard, nextBoard] = [nextBoard, currentBoard];
-  
 }
 
 /**
@@ -191,7 +188,6 @@ function mousePressed() {
   noLoop();
   mouseDragged();
 }
-
 
 /**
  * When mouse is released
@@ -271,10 +267,8 @@ body.addEventListener("click", (event) => {
   }
 });
 
-
 //multiple colors of life on the same board
 
 //Well-known patterns of Game of Life to select from (Examples: Gosper Glider Gun, Glider, Lightweight train)
 
 //Use Keyboard to control the cursor to place the life
-
