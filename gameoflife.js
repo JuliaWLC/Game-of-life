@@ -69,7 +69,7 @@ function init() {
   //Random initial states
   random.addEventListener("click", function () {
     stopFlag = false;
-    gameControl.innerHTML = "pause";
+    gameControl.innerHTML = "Pause";
 
     for (let x = 0; x < columns; x++) {
       for (let y = 0; y < rows; y++) {
@@ -208,7 +208,7 @@ reset.addEventListener("click", function () {
   init();
   stopFlag = true;
   loop();
-  gameControl.innerHTML = "start";
+  gameControl.innerHTML = "Start";
 });
 
 //start/pause the game
@@ -216,12 +216,12 @@ reset.addEventListener("click", function () {
 gameControl.addEventListener("click", function () {
   if (stopFlag == false) {
     noLoop();
-    gameControl.innerHTML = "start";
+    gameControl.innerHTML = "Start";
     stopFlag = true;
   } else {
     loop();
     stopFlag = false;
-    gameControl.innerHTML = "pause";
+    gameControl.innerHTML = "Pause";
   }
 });
 
@@ -229,7 +229,7 @@ gameControl.addEventListener("click", function () {
 function onChangeFrameRate(frameRate) {
   setFrameRate(parseInt(frameRate)); //framerate
   stopFlag = false;
-  gameControl.innerHTML = "pause";
+  gameControl.innerHTML = "Pause";
   loop();
 }
 
