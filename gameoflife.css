@@ -232,4 +232,10 @@ header {
   .workspace-container {
     margin-right: 0%;
   }
+
+  body{
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 0px;
+  }
 }
