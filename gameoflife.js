@@ -101,7 +101,7 @@ function init() {
 }
 
 function draw() {
-  background(229, 210, 196);
+  background(174, 156, 143);
   stroke(242, 232, 225);
   generate();
   for (let i = 0; i < columns; i++) {
@@ -114,7 +114,7 @@ function draw() {
           fill(boxColor);
         }
       } else {
-        fill(229, 210, 196);
+        fill(174, 156, 143);
       }
       stroke(242, 232, 225);
       rect(i * unitLength, j * unitLength, unitLength, unitLength);

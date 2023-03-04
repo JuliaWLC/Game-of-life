@@ -1,11 +1,18 @@
-.main {
-  display: flex;
-}
 
 body{
   background-color:
-#ae9c8f;
+rgb(229,210,196);
+color: 
+rgb(122,105,93);
+font-size: larger;
+}
 
+#top-container{
+  display:flex;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
 }
 
 header{
@@ -20,20 +27,43 @@ margin-top: 0%;
 
 .gameBoard {
   width: 100%;
-  height: 500px;
+  height: 460px;  
+}
+
+.container{
+  display:flex;
+  justify-content: space-evenly;
+  margin-top: 1%;
 }
 
 
+.fps-range{
+  text-decoration-thickness: 0px;
+  padding-top: 10px;
+}
+
+.color-picker{
+  display: flex;
+  justify-content: end;
+  padding-top: 10px;
+}
+
+.stable-color-picker{
+  display: flex;
+  justify-content: end;
+  padding-top: 10px;
+}
+
+#colorInput{
+  
+}
 .dark-mode {
   background-color:#1f1000;
-  color: white;
+  color:rgb(229,210,196);
+font-size: larger;
 }
 
 
 .invisible {
   display: none;
-}
-
-#canvas {
-
 }

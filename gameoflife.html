@@ -13,14 +13,23 @@
       crossorigin="anonymous"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+      integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="gameoflife.css" />
   </head>
   <body>
     <section class="workspace-container">
-      <header class="row" id="top-cont">
-        <p>Game of Life</p>
+      <header id="top-container">
 
-        <div class="mode-control">
+        <div class="title">
+        <p>Game of Life</p>
+        </div>
+
+        <div class="mode-control" >
           <button onclick="changeMode()" class="color-mode">
             <span class="dark-button">dark-mode</span>
             <span class="light-button invisible">light-mode</span>
@@ -39,14 +48,8 @@
       <footer class="row">
         <div class="container">
           <div class="left-bar">
-            <button type="button" id="game-control">start</button>
-            <button type="button" id="reset-game">reset-game</button>
-            <button type="button" id="random">random</button>
-          </div>
-
-          <div class="right-bar">
             <div class="fps-range">
-              <i>fpsRange</i>
+              <i class="bi bi-speedometer2"></i>
               <input
                 type="range"
                 min="1"
@@ -57,41 +60,42 @@
               />
             </div>
 
-            <!-- color -->
+          
             <div class="color-picker">
-              <i>color picker</i>
+              <p>Life</p>
               <input id="colorInput" type="color" />
             </div>
 
             <div class="stable-color-picker">
-              <i>color picker of stable life</i>
+              <p>Stable life</p>
               <input id="stableColorInput" type="color" />
             </div>
           </div>
 
-          <div class="rules row">
-            <p>rules explanation</p>
-          </div>
 
+<div  class="middle-bar">
+            <button type="button" id="game-control">Start</button> 
+            <button type="button" id="reset-game">Reset</button>
+            <button type="button" id="random">Random</button>
+          </div>
+            
           <div class="row">
             <div class="col">
-              <p>underPopulation</p>
               <select
                 id="underPopulation"
                 class="form-select col-3"
                 aria-label="Default select example"
               >
-                <option selected>Open this select menu</option>
+                <option selected>UnderPopulation</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
               </select>
             </div>
             <div class="col">
-              <p>overPopulation</p>
               <select class="form-select" aria-label="Default select example">
                 <option selected id="overPopulation">
-                  Open this select menu
+                  OverPopulation
                 </option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -100,10 +104,9 @@
             </div>
 
             <div class="col">
-              <p>reproduction</p>
               <select class="form-select" aria-label="Default select example">
                 <option selected id="reproduction">
-                  Open this select menu
+                  Reproduction
                 </option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -121,5 +124,7 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
     <script src="gameoflife.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
   </body>
 </html>
