@@ -26,13 +26,13 @@
       <header id="top-container">
 
         <div class="title">
-        <p>Game of Life</p>
+        <h1>Game of Life</h1>
         </div>
 
         <div class="mode-control" >
           <button onclick="changeMode()" class="color-mode">
-            <span class="dark-button">dark-mode</span>
-            <span class="light-button invisible">light-mode</span>
+            <span class="dark-button">Dark</span>
+            <span class="light-button invisible">Light</span>
           </button>
         </div>
       </header>
@@ -43,7 +43,7 @@
         </div>
       </section>
 
-      <!-- rules of survival -->
+  
 
       <footer class="row">
         <div class="container">
@@ -79,11 +79,11 @@
             <button type="button" id="random">Random</button>
           </div>
             
-          <div class="row">
+          <div id="bottom-container" class="row">
             <div class="col">
               <select
                 id="underPopulation"
-                class="form-select col-3"
+                class="form-select col-4"
                 aria-label="Default select example"
               >
                 <option selected>UnderPopulation</option>
@@ -93,8 +93,8 @@
               </select>
             </div>
             <div class="col">
-              <select class="form-select" aria-label="Default select example">
-                <option selected id="overPopulation">
+              <select id="overPopulation" class="form-select col-4" aria-label="Default select example">
+                <option selected >
                   OverPopulation
                 </option>
                 <option value="1">1</option>
@@ -104,8 +104,8 @@
             </div>
 
             <div class="col">
-              <select class="form-select" aria-label="Default select example">
-                <option selected id="reproduction">
+              <select id="reproduction" class="form-select col-4" aria-label="Default select example" >
+                <option selected >
                   Reproduction
                 </option>
                 <option value="1">1</option>
