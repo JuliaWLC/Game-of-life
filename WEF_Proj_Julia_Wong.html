@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="utf-8">
   <head>
+    <title>GoL</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -69,6 +70,7 @@
           </div>
 
           <div class="middle-bar">
+            <button type="button" id="cursor-control">Start Cursor</button>
             <button type="button" id="game-control">Start</button>
             <button type="button" id="reset-game">Reset</button>
             <button type="button" id="random">Random</button>
@@ -77,8 +79,16 @@
           <div id="bottom-container" class="row">
             <div class="col">
               <select
+                id="patternSelect"
+                class="form-select col-3"
+                aria-label="Default select example"
+              >
+              </select>
+            </div>
+            <div class="col">
+              <select
                 id="underPopulation"
-                class="form-select col-4"
+                class="form-select col-3"
                 aria-label="Default select example"
               >
                 <option selected>UnderPopulation</option>
@@ -90,7 +100,7 @@
             <div class="col">
               <select
                 id="overPopulation"
-                class="form-select col-4"
+                class="form-select col-3"
                 aria-label="Default select example"
               >
                 <option selected>OverPopulation</option>
@@ -99,11 +109,10 @@
                 <option value="3">3</option>
               </select>
             </div>
-
             <div class="col">
               <select
                 id="reproduction"
-                class="form-select col-4"
+                class="form-select col-3"
                 aria-label="Default select example"
               >
                 <option selected>Reproduction</option>
@@ -122,6 +131,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+    <script src="pattern.js"></script>
     <script src="gameoflife.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

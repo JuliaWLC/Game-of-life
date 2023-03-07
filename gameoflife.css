@@ -97,6 +97,21 @@ header {
   box-shadow: inset 0 0 0.5em 0 var (--clr-neon), 0 0 0.5em 0 var (--clr-neon);
 }
 
+#cursor-control {
+  width: 120px;
+  background-color: rgb(122, 105, 93);
+  font-size: rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(229, 210, 196);
+  border: none;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.5em currentColor;
+  box-shadow: inset 0 0 0.5em 0 var (--clr-neon), 0 0 0.5em 0 var (--clr-neon);
+}
+
 #reset-game {
   width: 120px;
   background-color: rgb(122, 105, 93);
@@ -125,6 +140,22 @@ header {
   border-radius: 0.25em;
   text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.5em currentColor;
   box-shadow: inset 0 0 0.5em 0 var (--clr-neon), 0 0 0.5em 0 var (--clr-neon);
+}
+
+#patternSelect{
+  width: 180px;
+  background-color: rgb(122, 105, 93);
+  font-size: rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(229, 210, 196);
+  border: none;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.5em currentColor;
+  box-shadow: inset 0 0 0.5em 0 var (--clr-neon), 0 0 0.5em 0 var (--clr-neon);
+
 }
 
 .dark-mode {
@@ -212,9 +243,15 @@ header {
     padding-top: 20px;
     margin-left: 20px;
   }
+#cursor-control {
+      margin-bottom: 20px;
+}
 
   #game-control {
     margin-bottom: 20px;
+  }
+  #random {
+margin-bottom: 20px;
   }
 
   #reset-game {
